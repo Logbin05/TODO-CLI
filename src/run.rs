@@ -1,3 +1,4 @@
+use crate::services::clear_terminal::clear_terminal;
 use crate::ui::home::home_page;
 use std::io::{self, Write};
 
@@ -11,6 +12,10 @@ pub async fn run_cli() {
 
         let choice = input.trim();
 
-        
+        match choice {
+          "c" | "clear" | "cls" => clear_terminal(),
+          "q" | "quit" | "exit" => break,
+          _ => println!("Unknown option"),
+        }
     }
 }
