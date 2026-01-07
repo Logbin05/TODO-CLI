@@ -10,7 +10,7 @@ pub enum StatusTodo {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Todo {
-    pub todo_id: i32,
+    pub todo_id: u32,
     pub name_todo: String,
     pub status: StatusTodo,
     pub date: String,
