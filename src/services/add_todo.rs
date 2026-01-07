@@ -20,12 +20,15 @@ pub fn add_todo(todos: &mut Vec<Todo>, counter: &mut u32) {
         }
 
         *counter += 1;
+        let date = Local::now().format("%Y-%m-%d %H:%M:%S").to_string();
         todos.push(Todo {
             todo_id: *counter,
             name_todo: input.to_string(),
             status: StatusTodo::ACTIVE,
-            date: Local::now().format("%Y-%m-%d %H:%M:%S").to_string(),
+            date: date.clone(),
         });
-        print!("\nSuccess! The todo successfully created.");
+        println!("\nSuccess! The todo successfully created.");
+        println!("{:<5} | {:<30} | {:<10} | {}", *counter, input, StatusTodo::ACTIVE, date);
+
     }
 }
