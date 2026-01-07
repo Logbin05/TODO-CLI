@@ -7,9 +7,10 @@ pub fn home_page() {
   ----------------------------
            • Action •
 
+    [1]: Watch list todo;
     [1]: Add todo;
-    [2]: Edit name todo;
-    [3]: Delete todo;
+    [3]: Edit name todo;
+    [4]: Delete todo;
 
   ----------------------------
            • Others •
