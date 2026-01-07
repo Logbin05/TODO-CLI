@@ -1,6 +1,6 @@
 use crate::services::{add_todo::add_todo, clear_terminal::clear_terminal};
 use crate::types::todo::Todo;
-use crate::ui::home::home_page;
+use crate::ui::{home::home_page, list::list_todo};
 use std::io::{self, Write};
 
 pub async fn run_cli() {
@@ -16,6 +16,7 @@ pub async fn run_cli() {
         let choice = input.trim();
 
         match choice {
+          "1" => list_todo(&todos),
           "2" => add_todo(&mut todos, &mut counter),
           "c" | "clear" | "cls" => clear_terminal(),
           "q" | "quit" | "exit" => break,
