@@ -1,4 +1,7 @@
+use crate::services::clear_terminal::clear_terminal;
+
 pub fn home_page() {
+    clear_terminal();
     let menu = r#"
           • TODO: CLI •
   ----------------------------
