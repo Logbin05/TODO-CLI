@@ -1,15 +1,8 @@
+pub mod run;
 pub mod types;
+pub mod ui;
 
-fn main() {
-  let menu = r#"
-    --- TODO: CLI ---
-
-    Action:
-    [1] Add todo;
-    [2] Edit name todo;
-    [3] Delete todo;
-    [q] Exit/close;
-  "#;
-  
-    println!("{}", format!("{}", menu));
+#[tokio::main]
+async fn main() {
+  run::run_cli().await;
 }
