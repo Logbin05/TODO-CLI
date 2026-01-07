@@ -1,16 +1,21 @@
 pub fn home_page() {
     let menu = r#"
-  --- TODO: CLI ---
+          • TODO: CLI •
+  ----------------------------
+           • Action •
 
-  • Action •
+    [1]: Add todo;
+    [2]: Edit name todo;
+    [3]: Delete todo;
 
-  [1] Add todo;
-  [2] Edit name todo;
-  [3] Delete todo;
+  ----------------------------
+           • Others •
 
-  [q] Exit/close;
+    [c]: clear terminal;
+    [q]: Exit/close;
+  ----------------------------
 
-  • Made with ❤️ •
+  • Made with ❤️ by logbin05👨‍💻 •
 "#;
 
     println!("{menu}");
