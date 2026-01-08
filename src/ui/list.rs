@@ -8,7 +8,7 @@ pub fn list_todo(todos: &Vec<Todo>) {
         println!("• Your Todo List •\n");
 
         if todos.is_empty() {
-            println!("No todos yet!\n");
+            println!("No todos yet!");
         } else {
             println!(
                 "{:<5} | {:<30} | {:<10} | {}",
@@ -23,8 +23,17 @@ pub fn list_todo(todos: &Vec<Todo>) {
                 );
             }
         }
+        let menu = r#"
+          ----------------------------
+                  • Action •
 
-        println!("\nInstruction: [q] to quit\n");
+            [1]: Edit todo;
+            [2]: delete todo;
+
+            [q]: to quit
+          ----------------------------
+        "#;
+        println!("\n{menu}\n");
         print!("Enter action: ");
         io::stdout().flush().unwrap();
 

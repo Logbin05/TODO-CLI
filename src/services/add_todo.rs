@@ -7,16 +7,19 @@ use crate::types::todo::{StatusTodo, Todo};
 pub fn add_todo(todos: &mut Vec<Todo>, counter: &mut u32) {
     loop {
         clear_terminal();
-        println!("\n\nInstruction for using CLI\n\n Steps:\n - enter name\n - [q] to quit\n");
+        println!("Instruction for using CLI\n\n Steps:\n - enter name\n - [q] to quit\n");
 
         print!("Enter todo name: ");
         io::stdout().flush().unwrap();
         let mut input = String::new();
         io::stdin().read_line(&mut input).unwrap();
-        let input = input.trim();
+        let choice = input.trim();
 
-        if input == "q" {
-            break;
+        match choice {
+            "1" => todo!(),
+            "2" => todo!(),
+            "q" => break,
+            _ => println!("Ups")
         }
 
         *counter += 1;
@@ -27,7 +30,7 @@ pub fn add_todo(todos: &mut Vec<Todo>, counter: &mut u32) {
             status: StatusTodo::ACTIVE,
             date: date.clone(),
         });
-        println!("\nSuccess! The todo successfully created.");
+        println!("\n\nSuccess! The todo successfully created.");
         println!("{:<5} | {:<30} | {:<10} | {}", *counter, input, StatusTodo::ACTIVE, date);
 
     }
